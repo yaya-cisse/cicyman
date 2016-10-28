@@ -1,6 +1,6 @@
 require 'active_record'
 require 'mysql2'
-require 'activerecord-mysql2-adapter'
+# require 'activerecord-mysql2-adapter'
 
 module Cicyman
   class MysqlManager
@@ -12,7 +12,7 @@ module Cicyman
 
     def load_yaml
       @dbconfig = YAML.load(File.read(@loadpath))
-      ActiveRecord::Base.establish_connection(@dbconfig[:development])
+      # ActiveRecord::Base.establish_connection("mysql2://root:mditest@172.17.0.4/prototypes_db")
     end
 
     def self.get_file(file_id)
@@ -27,11 +27,8 @@ module Cicyman
         @file = MysqlManager::Fichier.find(file_id)
       end
       @file.content = binary
-      file_id
-    end
-
-    def self.save_file
       @file.save
+      file_id
     end
 
     def self.destroy_file(id)
