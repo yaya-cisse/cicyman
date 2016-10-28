@@ -19,21 +19,13 @@ module Cicyman
 
     def self.get_file(file_id)
       Cicyman.couchbase.connection.get(file_id)
-      # @my_file ||= (
-      #     CouchbaseManager.instance.connection.get(file_id)
-      # )
     end
 
     def self.set_file(file_id, binary)
-      @my_file = binary
       file_id = SecureRandom.uuid
       @file_key = file_id
-      Cicyman.couchbase.connection.set(@file_key, @my_file, :format => :plain)
+      Cicyman.couchbase.connection.set(@file_key, binary, :format => :plain)
       file_id
-    end
-
-    def self.save_file
-      Cicyman.couchbase.connection.set(@file_key, @my_file, :format => :plain)
     end
 
     def self.destroy_file(id)
