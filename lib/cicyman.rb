@@ -12,17 +12,9 @@ require 'moped'
 require 'tzinfo'
 require 'origin'
 require 'mysql2'
-require 'activerecord-mysql2-adapter'
-# require 'after_do'
+# require 'activerecord-mysql2-adapter'
 
 module Cicyman
-
-  # extend ActiveSupport::Concern
-  # Cicyman.singleton_class.extend AfterDo
-
-  # included do
-  # Cicyman.singleton_class.after :set_file do :save_file end
-  # end
 
   class << self
     attr_accessor :provider, :glusterfs, :couchbase, :mongo, :mysql
@@ -75,11 +67,6 @@ module Cicyman
   def self.destroy_file(file_id)
     ("Cicyman::"+self.provider).constantize.destroy_file(file_id)
   end
-
-  # private
-  # def self.save_file
-  #   self.provider.constantize.save_file
-  # end
 end
 
 
