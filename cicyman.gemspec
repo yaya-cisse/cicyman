@@ -30,15 +30,10 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.12"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency 'mysql2', '~> 0.3.20'
+  spec.add_development_dependency 'mysql2', '~> 0.4.4'
   spec.add_development_dependency 'mongoid', '~> 3.1.7', '>= 3.1.7'
-  # spec.add_development_dependency 'moped', '~> 2.0.0', '>= 2.0.0'
-  # spec.add_development_dependency 'activemodel', '~> 3.2', '>= 3.2'
-  # spec.add_development_dependency 'tzinfo', '~> 1.1.0', '>= 1.1.0'
-  # spec.add_development_dependency 'origin', '~> 2.2', '>= 2.2.0'
-  # spec.add_development_dependency 'bson', '~> 3.0', '>= 3.0'
-  spec.add_development_dependency 'after_do', '~> 0.4.0'
   spec.add_development_dependency 'libgfapi-ruby', '~> 0.0.15'
   spec.add_development_dependency 'couchbase', '~> 1.3', '>= 1.3.14'
   spec.add_development_dependency 'couchbase-model', '~> 0.5.4'
+  # spec.add_development_dependency 'activerecord-mysql2-adapter', '~> 0.0.3'
 end
