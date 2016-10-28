@@ -30,10 +30,6 @@ module Cicyman
       file_id
     end
 
-    def self.save_file
-      @file.save
-    end
-
     def self.destroy_file(id)
       if id
         file = MongoManager::Fichier.find(id)
